@@ -13,6 +13,7 @@ public class RemoteService extends Service {
     IMyAidlInterface.Stub stub = new IMyAidlInterface.Stub() {
         @Override
         public void addBook(Book book) throws RemoteException {
+            book.setName(book.getName()+"---server");
             bookList.add(book);
         }
 
